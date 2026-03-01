@@ -73,6 +73,5 @@ The model used is a fine-tuned EfficientNet-B0 architecture trained on the NEU S
 
 The NEU Surface Defect dataset contains six types of typical surface defects of hot-rolled steel strips. Each class contains 300 grayscale images (200 for training, 100 for testing), each with a size of 200×200 pixels.
 
-## License
 
-This project is for educational and research purposes.
+
