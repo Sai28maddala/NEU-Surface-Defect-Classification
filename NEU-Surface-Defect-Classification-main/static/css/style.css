@@ -1,0 +1,414 @@
+/* Global Styles */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2980b9;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --success-color: #2ecc71;
+    --warning-color: #f39c12;
+    --danger-color: #e74c3c;
+    --gray-color: #95a5a6;
+    --light-gray-color: #f5f5f5;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: #f9f9f9;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+header h1 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+}
+
+header p {
+    color: var(--gray-color);
+    font-size: 1.1rem;
+}
+
+header i {
+    margin-right: 0.5rem;
+}
+
+/* Main Content Styles */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.upload-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+.upload-area {
+    background-color: white;
+    border: 2px dashed var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 3rem 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.upload-area:hover {
+    background-color: var(--light-color);
+}
+
+.upload-area i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.upload-area p {
+    margin-bottom: 1.5rem;
+    color: var(--gray-color);
+}
+
+.browse-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.browse-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.preview-container {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.reset-btn {
+    background-color: var(--light-gray-color);
+    color: var(--dark-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.reset-btn:hover {
+    background-color: var(--gray-color);
+    color: white;
+}
+
+.image-preview {
+    width: 100%;
+    height: 300px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    background-color: var(--light-gray-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.analyze-btn {
+    width: 100%;
+    background-color: var(--success-color);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: var(--transition);
+}
+
+.analyze-btn:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+}
+
+.analyze-btn i {
+    margin-right: 0.5rem;
+}
+
+/* Results Container Styles */
+.results-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+.results-container h2 {
+    margin-bottom: 1.5rem;
+    color: var(--dark-color);
+    text-align: center;
+}
+
+.result-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--light-gray-color);
+}
+
+.confidence {
+    background-color: var(--light-color);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.defect-type {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.defect-type i {
+    margin-right: 0.75rem;
+    color: var(--warning-color);
+}
+
+.defect-description {
+    color: var(--gray-color);
+    line-height: 1.6;
+}
+
+.probability-container {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem;
+}
+
+.probability-container h3 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.probability-bar {
+    margin-bottom: 1rem;
+}
+
+.probability-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.probability-label span:first-child {
+    font-weight: bold;
+}
+
+.probability-progress {
+    height: 10px;
+    background-color: var(--light-gray-color);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.probability-fill {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+}
+
+/* Defect Info Styles */
+.defect-info-container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.defect-info-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.defect-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.defect-info-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem;
+    transition: var(--transition);
+}
+
+.defect-info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.defect-info-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--light-color);
+    padding-bottom: 0.5rem;
+}
+
+.defect-info-card p {
+    color: var(--gray-color);
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-top: 2rem;
+}
+
+footer p {
+    color: var(--gray-color);
+}
+
+/* Loading Overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    display: none;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 1s ease-in-out infinite;
+    margin-bottom: 1rem;
+}
+
+.loading-overlay p {
+    color: white;
+    font-size: 1.2rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    main {
+        flex-direction: column;
+    }
+    
+    .defect-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Defect Type Colors */
+.crazing {
+    color: #3498db;
+}
+
+.inclusion {
+    color: #e74c3c;
+}
+
+.patches {
+    color: #f39c12;
+}
+
+.pitted_surface {
+    color: #9b59b6;
+}
+
+.rolled-in_scale {
+    color: #1abc9c;
+}
+
+.scratches {
+    color: #d35400;
+}

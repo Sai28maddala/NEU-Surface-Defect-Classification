@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEU Surface Defect Analyzer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-microscope"></i> NEU Surface Defect Analyzer</h1>
+            <p>Upload an image to detect and classify surface defects</p>
+        </header>
+
+        <main>
+            <div class="upload-container">
+                <div class="upload-area" id="dropArea">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Drag & Drop an image or click to browse</p>
+                    <input type="file" id="fileInput" accept="image/*" hidden>
+                    <button class="browse-btn">Browse Files</button>
+                </div>
+                
+                <div class="preview-container" id="previewContainer" style="display: none;">
+                    <div class="preview-header">
+                        <h3>Image Preview</h3>
+                        <button class="reset-btn" id="resetBtn"><i class="fas fa-redo"></i> Reset</button>
+                    </div>
+                    <div class="image-preview">
+                        <img id="imagePreview" src="#" alt="Preview">
+                    </div>
+                    <button class="analyze-btn" id="analyzeBtn"><i class="fas fa-search"></i> Analyze Defect</button>
+                </div>
+            </div>
+
+            <div class="results-container" id="resultsContainer" style="display: none;">
+                <h2>Analysis Results</h2>
+                <div class="result-card">
+                    <div class="result-header">
+                        <h3>Detected Defect</h3>
+                        <span class="confidence" id="confidenceValue">Confidence: 0%</span>
+                    </div>
+                    <div class="defect-type" id="defectType">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>No defect detected yet</span>
+                    </div>
+                    <div class="defect-description" id="defectDescription">
+                        <!-- Description will be inserted here -->
+                    </div>
+                </div>
+                
+                <div class="probability-container">
+                    <h3>Probability Distribution</h3>
+                    <div class="probability-bars" id="probabilityBars">
+                        <!-- Probability bars will be inserted here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div class="defect-info-container">
+            <h2>Surface Defect Types</h2>
+            <div class="defect-grid">
+                <div class="defect-info-card">
+                    <h3>Crazing</h3>
+                    <p>Interconnected or adjacent cracks in a network. Often caused by surface cooling too rapidly.</p>
+                </div>
+                <div class="defect-info-card">
+                    <h3>Inclusion</h3>
+                    <p>Foreign particles embedded in the metal matrix during the manufacturing process.</p>
+                </div>
+                <div class="defect-info-card">
+                    <h3>Patches</h3>
+                    <p>Regions with different surface textures, often due to uneven cooling or material inconsistencies.</p>
+                </div>
+                <div class="defect-info-card">
+                    <h3>Pitted Surface</h3>
+                    <p>Small, crater-like depressions in the surface, often caused by corrosion or material removal.</p>
+                </div>
+                <div class="defect-info-card">
+                    <h3>Rolled-in Scale</h3>
+                    <p>Scale or oxide pressed into the surface during the rolling process.</p>
+                </div>
+                <div class="defect-info-card">
+                    <h3>Scratches</h3>
+                    <p>Linear marks caused by friction between the material and another object during handling or processing.</p>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+        <p>Analyzing image...</p>
+    </div>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
